@@ -2,9 +2,10 @@
 #
 # This class manage the installation of the openldap package
 class openldap::install {
-    package { "openldap" :
-        name    => $openldap::params::package_name,
-        ensure  => $openldap::params::ensure_mode,
-        require => [ Exec ["repo-update"],],
-    }
+  package { 'openldap':
+    ensure  => $openldap::params::ensure_mode,
+    name    => $openldap::params::package_name,
+    require => [
+      Exec['repo-update'],],
+  }
 }
