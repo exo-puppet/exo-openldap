@@ -36,6 +36,6 @@ class openldap (
     fail('lastversion must be true or false')
   }
 
-  include repo
+  include stdlib
   include openldap::params, openldap::install, openldap::config, openldap::service
 }
